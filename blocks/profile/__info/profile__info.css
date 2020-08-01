@@ -1,0 +1,11 @@
+.profile__info {
+  max-width: 495px;
+  min-height: 77px;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__info {
+    text-align: center;
+    max-width: 350px;
+  }
+}
