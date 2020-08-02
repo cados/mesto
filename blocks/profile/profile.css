@@ -1,10 +1,11 @@
-@import url(../profile/__avatar/profile__avatar.css);
-@import url(../profile/__item/profile__item.css);
-@import url(../profile/__title/profile__title.css);
-@import url(../profile/__subtitle/profile__subtitle.css);
-@import url(../profile/__info/profile__info.css);
-@import url(../profile/__edit-button/profile__edit-button.css);
-@import url(../profile/__add-button/profile__add-button.css);
+@import url('../profile/__avatar/profile__avatar.css');
+@import url('../profile/__item/profile__item.css');
+@import url('../profile/_text/profile_text.css');
+@import url('../profile/__title/profile__title.css');
+@import url('../profile/__subtitle/profile__subtitle.css');
+@import url('../profile/__info/profile__info.css');
+@import url('../profile/__edit-button/profile__edit-button.css');
+@import url('../profile/__add-button/profile__add-button.css');
 
 .profile {
   max-width: 882px;

@@ -5,8 +5,16 @@
   line-height: 22px;
   font-weight: normal;
   margin: 0;
-  /* display: inline-table; */
   text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 495px;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__subtitle {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 480px) {

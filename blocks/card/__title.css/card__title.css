@@ -1,5 +1,4 @@
-.cards__title {
-  width: 80%;
+.card__title {
   margin: 0;
   background-color: white;
   font-family: 'Inter', Arial, sans-serif;
@@ -11,4 +10,5 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  width: 80%;
 }
