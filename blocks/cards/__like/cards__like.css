@@ -9,4 +9,14 @@
   background-color: white;
   align-self: center;
   cursor: pointer;
+  transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+}
+
+.cards__like:hover {
+  opacity: 0.5;
+  width: 21px;
+  height: 19px;
 }

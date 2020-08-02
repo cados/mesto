@@ -5,7 +5,8 @@
   line-height: 22px;
   font-weight: normal;
   margin: 0;
-  display: inline-table;
+  /* display: inline-table; */
+  text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 480px) {

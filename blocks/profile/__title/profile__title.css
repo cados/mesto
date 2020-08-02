@@ -7,6 +7,7 @@
   margin: 0;
   display: inline-table;
   margin-right: 17px;
+  text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 480px) {
