@@ -21,12 +21,3 @@
   src: url('../fonts/Inter-Black.woff2') format('woff2'),
     url('../fonts/Inter-Black.woff') format('woff');
 }
-
-/* inter-bold - latin */
-/* @font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: bold;
-  src: url('../fonts/Inter-Bold.woff2') format('woff2'),
-    url('../fonts/Inter-Bold.woff') format('woff');
-} */
