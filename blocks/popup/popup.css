@@ -9,3 +9,10 @@
 @import url('../popup/__image/popup__image.css');
 @import url('../popup/__text/popup__text.css');
 @import url('../popup/__close-button/_img/popup__close-button_img.css');
+
+/* .popup {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: visibility 0.2s, opacity 0.2s linear;
+} */
