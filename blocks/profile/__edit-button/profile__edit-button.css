@@ -8,6 +8,7 @@
   border: 1px solid #fff;
   cursor: pointer;
   margin: 20px 24px 0px 24px;
+  transition: opacity 0.5s;
 }
 
 .profile__edit-button:hover {
