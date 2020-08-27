@@ -73,7 +73,7 @@ function addCards(cardLink, cardName) {
   const itemTemplate = document
     .querySelector('#itemTemplate')
     .content.cloneNode(true);
-  const popupImage = document.querySelector('#popup__images');
+  const popupImage = document.querySelector('.popup__images');
   const popupText = document.querySelector('.popup__text');
 
   itemTemplate.querySelector('.card__title').textContent = cardName;
