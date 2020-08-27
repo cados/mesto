@@ -28,74 +28,7 @@
           <button class="profile__add-button" type="button"></button>
         </section>
         <section class="elements">
-          <ul class="cards">
-            <li class="card">
-              <img
-                class="card__images"
-                src="./images/karachaevsk.jpg"
-                alt="карачаевск"
-              />
-              <div class="card__item">
-                <h2 class="card__title">Карачаевск</h2>
-                <button class="card__like" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__images"
-                src="./images/elbrus.jpg"
-                alt="эльбрус"
-              />
-              <div class="card__item">
-                <h2 class="card__title">Гора Эльбрус</h2>
-                <button class="card__like" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__images"
-                src="./images/dombai.jpg"
-                alt="домбай"
-              />
-              <div class="card__item">
-                <h2 class="card__title">Домбай</h2>
-                <button class="card__like" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__images"
-                src="./images/elbrus.jpg"
-                alt="эльбрус"
-              />
-              <div class="card__item">
-                <h2 class="card__title">Гора Эльбрус</h2>
-                <button class="card__like" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__images"
-                src="./images/dombai.jpg"
-                alt="домбай"
-              />
-              <div class="card__item">
-                <h2 class="card__title">Домбай</h2>
-                <button class="card__like" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__images"
-                src="./images/karachaevsk.jpg"
-                alt="карачаево-черкесия "
-              />
-              <div class="card__item">
-                <h2 class="card__title">Карачаево-Черкесия</h2>
-                <button class="card__like" type="button"></button>
-              </div>
-            </li>
-          </ul>
+          <ul class="cards"></ul>
         </section>
         <footer class="footer">
           <p class="footer__copyright">&COPY;2020 Mesto Russia</p>
@@ -123,6 +56,53 @@
         </form>
       </div>
     </div>
-    <script src="./js/popup.js"></script>
+    <div class="popup">
+      <div class="popup__container" id="popup_add-card">
+        <form class="popup__form popup__form_image-add" action="#" name="form">
+          <button
+            class="popup__close-button"
+            id="popup__close"
+            type="button"
+          ></button>
+          <h2 class="popup__title">Новое место</h2>
+          <input
+            class="popup__input popup__input_type_name-image"
+            type="text"
+            name="name"
+            placeholder="Название"
+          />
+          <input
+            class="popup__input popup__input_type_prof-link"
+            type="text"
+            name="prof"
+            placeholder="Ссылка на картинку"
+          />
+          <button class="popup__button" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_image">
+      <div class="popup__container popup__container_image">
+        <figure class="popup__image">
+          <button
+            class="popup__close-button popup__close-button_img"
+            type="button"
+          ></button>
+          <img id="popup__images" src="#" alt="none" />
+          <figcaption class="popup__text">Картинка</figcaption>
+        </figure>
+      </div>
+    </div>
+    <template id="itemTemplate">
+      <li class="card">
+        <button class="card__trash" type="button"></button>
+        <img class="card__images" src="#" alt="none" />
+        <div class="card__item">
+          <h2 class="card__title">Карачаево-Черкесия</h2>
+          <button class="card__like" type="button"></button>
+        </div>
+      </li>
+    </template>
+    <script src="./js/main.js"></script>
   </body>
 </html>
