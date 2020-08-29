@@ -122,7 +122,7 @@ function addCardItem(evt) {
   const cardName = imageName.value;
   const cardLink = imageLink.value;
   itemContainer.prepend(addCards(cardLink, cardName));
-  togglePopup(popup);
+  togglePopup(addCard);
   cardName.value = '';
   cardLink.value = '';
 }
@@ -134,11 +134,9 @@ closeBtn.addEventListener('click', toggleClass);
 form.addEventListener('submit', saveForm);
 
 addCard.addEventListener('submit', addCardItem);
-
 addCardBtn.addEventListener('click', function () {
   togglePopup(addCard);
 });
-
 closePlaceBtn.addEventListener('click', function () {
   togglePopup(addCard);
 });
