@@ -122,7 +122,7 @@ function addCardItem(evt) {
   const cardName = imageName.value;
   const cardLink = imageLink.value;
   itemContainer.prepend(addCards(cardLink, cardName));
-  togglePopup(closePlaceBtn.parentNode.parentNode);
+  togglePopup(popup);
   cardName.value = '';
   cardLink.value = '';
 }
@@ -134,11 +134,13 @@ closeBtn.addEventListener('click', toggleClass);
 form.addEventListener('submit', saveForm);
 
 addCard.addEventListener('submit', addCardItem);
+
 addCardBtn.addEventListener('click', function () {
-  addCard.classList.add('popup_opened');
+  togglePopup(addCard);
 });
+
 closePlaceBtn.addEventListener('click', function () {
-  addCard.classList.remove('popup_opened');
+  togglePopup(addCard);
 });
 
 closeBtnImg.addEventListener('click', function () {
