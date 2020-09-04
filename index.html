@@ -37,9 +37,15 @@
     </div>
     <div class="popup">
       <div class="popup__container">
-        <form class="popup__form" action="#" name="form">
+        <form
+          class="popup__form popup__form-prof"
+          action="#"
+          name="form"
+          novalidate
+        >
           <button class="popup__close-button" type="button"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
+<<<<<<< HEAD
           <input
             class="popup__input popup__input_type_name"
             type="text"
@@ -56,6 +62,32 @@
             minlength="2"
             maxlength="200"
           />
+=======
+          <label class="popup__field">
+            <input
+              class="popup__input popup__input_type_name"
+              id="profile-name"
+              type="text"
+              name="name"
+              placeholder="Ваше имя"
+              minlength="2"
+              maxlength="40"
+            />
+            <span class="popup__input-error" id="profile-name-error"></span>
+          </label>
+          <label class="popup__field">
+            <input
+              class="popup__input popup__input_type_prof"
+              id="profile-prof"
+              type="text"
+              name="prof"
+              placeholder="Ваша профессия"
+              minlength="2"
+              maxlength="200"
+            />
+            <span class="popup__input-error" id="profile-prof-error"></span>
+          </label>
+>>>>>>> feature.function
           <button class="popup__button" type="submit" disabled>
             Сохранить
           </button>
@@ -64,13 +96,19 @@
     </div>
     <div class="popup">
       <div class="popup__container" id="popup_add-card">
-        <form class="popup__form popup__form_image-add" action="#" name="form">
+        <form
+          class="popup__form popup__form_image-add"
+          action="#"
+          name="image"
+          novalidate
+        >
           <button
             class="popup__close-button"
             id="popup__close"
             type="button"
           ></button>
           <h2 class="popup__title">Новое место</h2>
+<<<<<<< HEAD
           <input
             class="popup__input popup__input_type_name-image"
             type="text"
@@ -86,6 +124,42 @@
             required
           />
           <button class="popup__button" type="submit">Создать</button>
+=======
+          <label class="popup__field">
+            <input
+              class="popup__input popup__input_type_name-image"
+              id="image-name-input"
+              type="text"
+              name="name"
+              placeholder="Название"
+              minlength="1"
+              maxlength="30"
+              required
+            />
+            <span class="popup__input-error" id="image-name-input-error"></span>
+          </label>
+          <label class="popup__field">
+            <input
+              class="popup__input popup__input_type_prof-link"
+              id="image-source-input"
+              type="url"
+              name="prof"
+              placeholder="Ссылка на картинку"
+              required
+            />
+            <span
+              class="popup__input-error"
+              id="image-source-input-error"
+            ></span>
+          </label>
+          <button
+            class="popup__button popup__button_disabled"
+            type="submit"
+            disabled
+          >
+            Создать
+          </button>
+>>>>>>> feature.function
         </form>
       </div>
     </div>

@@ -1,11 +1,12 @@
 const closeBtn = document.querySelector('.popup__close-button');
 const editProfileBtn = document.querySelector('.profile__edit-button');
 const popup = document.querySelector('.popup__container');
+const popupList = Array.from(document.querySelectorAll('.popup'));
 const inputName = document.querySelector('.popup__input_type_name');
 const inputProf = document.querySelector('.popup__input_type_prof');
 const name = document.querySelector('.profile__title');
 const prof = document.querySelector('.profile__subtitle');
-const form = document.querySelector('.popup__form');
+const formProf = document.querySelector('.popup__form-prof');
 const addCardBtn = document.querySelector('.profile__add-button');
 const itemContainer = document.querySelector('.cards');
 const addCard = document.querySelector('#popup_add-card');
@@ -19,6 +20,7 @@ const itemTemplate = document.querySelector('#itemTemplate').content;
 const popupText = document.querySelector('.popup__text');
 const imageName = document.querySelector('.popup__input_type_name-image');
 const imageLink = document.querySelector('.popup__input_type_prof-link');
+const formImage = document.forms.image;
 
 const initialCards = [
   {
@@ -67,8 +69,8 @@ function modalOpened() {
   toggleClass();
 }
 
-function saveForm(e) {
-  e.preventDefault();
+function saveForm(evt) {
+  evt.preventDefault();
   name.textContent = inputName.value;
   prof.textContent = inputProf.value;
   toggleClass();
@@ -117,7 +119,6 @@ function renderCard() {
 renderCard();
 
 function addCardItem(evt) {
-  //evt.target.preventDefault();
   evt.preventDefault();
   const cardName = imageName.value;
   const cardLink = imageLink.value;
@@ -127,11 +128,33 @@ function addCardItem(evt) {
   cardLink.value = '';
 }
 
+function closePopupByOverlay() {
+  popupList.forEach((element) => {
+    element.addEventListener('click', function (evt) {
+      evt.target.classList.remove('popup_opened');
+    });
+  });
+}
+
+closePopupByOverlay();
+
+function closePopupByEsc() {
+  document.body.addEventListener('keydown', function (evt) {
+    if (evt.keyCode === 27) {
+      popupList.forEach((item) => {
+        item.childNodes[1].classList.remove('popup_opened');
+      });
+    }
+  });
+}
+
+closePopupByEsc();
+
 editProfileBtn.addEventListener('click', modalOpened);
 
 closeBtn.addEventListener('click', toggleClass);
 
-form.addEventListener('submit', saveForm);
+formProf.addEventListener('submit', saveForm);
 
 addCard.addEventListener('submit', addCardItem);
 addCardBtn.addEventListener('click', function () {
