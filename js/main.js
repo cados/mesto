@@ -78,20 +78,19 @@ function saveForm(evt) {
 
 function addCardElement(cardLink, cardName) {
   const itemElement = itemTemplate.cloneNode(true);
+  const cardImage = itemElement.querySelector('.card__images');
 
   itemElement.querySelector('.card__title').textContent = cardName;
-  itemElement.querySelector('.card__images').src = cardLink;
-  itemElement.querySelector('.card__images').alt = 'Фото ' + cardName;
+  cardImage.src = cardLink;
+  cardImage.alt = 'Фото ' + cardName;
 
-  itemElement
-    .querySelector('.card__images')
-    .addEventListener('click', function (evt) {
-      popupImages.src = evt.target.src;
-      popupText.textContent = evt.target
-        .closest('.card')
-        .querySelector('.card__title').textContent;
-      togglePopup(popupImage);
-    });
+  cardImage.addEventListener('click', function (evt) {
+    popupImages.src = evt.target.src;
+    popupText.textContent = evt.target
+      .closest('.card')
+      .querySelector('.card__title').textContent;
+    togglePopup(popupImage);
+  });
 
   itemElement
     .querySelector('.card__trash')
