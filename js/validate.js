@@ -1,17 +1,9 @@
-<<<<<<< HEAD
-enableValidation({
-=======
 const formParameters = {
->>>>>>> feature.function
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button',
   inactiveButtonClass: 'popup__button_disabled',
   inputErrorClass: 'popup__input_type_error',
-<<<<<<< HEAD
-  errorClass: 'popup__error_visible',
-});
-=======
   errorClass: 'popup__input-error_active',
 };
 
@@ -84,4 +76,3 @@ const enableValidation = function () {
 };
 
 enableValidation(formParameters);
->>>>>>> feature.function
