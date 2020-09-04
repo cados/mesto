@@ -9,18 +9,18 @@ const prof = document.querySelector('.profile__subtitle');
 const formProf = document.querySelector('.popup__form-prof');
 const addCardBtn = document.querySelector('.profile__add-button');
 const itemContainer = document.querySelector('.cards');
-const addCard = document.querySelector('#popup_add-card');
+const cardElement = document.querySelector('#popup_add-card');
 const closePlaceBtn = document.querySelector('#popup__close');
-const imgContainer = document.querySelector('.card__images');
+//const imgContainer = document.querySelector('.card__images');
 const closeBtnImg = document.querySelector('.popup__close-button_img');
 const popupImage = document.querySelector('.popup__container_image');
 const popupImages = document.querySelector('.popup__images');
-const popupAddImage = document.querySelector('.popup__form_image-add');
+//const popupAddImage = document.querySelector('.popup__form_image-add');
 const itemTemplate = document.querySelector('#itemTemplate').content;
 const popupText = document.querySelector('.popup__text');
 const imageName = document.querySelector('.popup__input_type_name-image');
 const imageLink = document.querySelector('.popup__input_type_prof-link');
-const formImage = document.forms.image;
+//const formImage = document.forms.image;
 
 const initialCards = [
   {
@@ -108,7 +108,7 @@ function addCards(cardLink, cardName) {
   return itemElement;
 }
 
-function renderCard() {
+function renderCards() {
   initialCards.forEach(function (element) {
     const cardLink = element.link;
     const cardName = element.name;
@@ -116,14 +116,14 @@ function renderCard() {
   });
 }
 
-renderCard();
+renderCards();
 
 function addCardItem(evt) {
   evt.preventDefault();
   const cardName = imageName.value;
   const cardLink = imageLink.value;
   itemContainer.prepend(addCards(cardLink, cardName));
-  togglePopup(addCard);
+  togglePopup(cardElement);
   cardName.value = '';
   cardLink.value = '';
 }
@@ -156,12 +156,12 @@ closeBtn.addEventListener('click', toggleClass);
 
 formProf.addEventListener('submit', saveForm);
 
-addCard.addEventListener('submit', addCardItem);
+cardElement.addEventListener('submit', addCardItem);
 addCardBtn.addEventListener('click', function () {
-  togglePopup(addCard);
+  togglePopup(cardElement);
 });
 closePlaceBtn.addEventListener('click', function () {
-  togglePopup(addCard);
+  togglePopup(cardElement);
 });
 
 closeBtnImg.addEventListener('click', function () {
