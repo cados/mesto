@@ -59,24 +59,24 @@ function togglePopup(target) {
   target.classList.toggle('popup_opened');
 }
 
-function toggleClass() {
-  popup.classList.toggle('popup_opened');
-}
+// function toggleClass() {
+//   popup.classList.toggle('popup_opened');
+// }
 
 function modalOpened() {
   inputName.value = name.textContent;
   inputProf.value = prof.textContent;
-  toggleClass();
+  togglePopup(popup);
 }
 
 function saveForm(evt) {
   evt.preventDefault();
   name.textContent = inputName.value;
   prof.textContent = inputProf.value;
-  toggleClass();
+  togglePopup(popup);
 }
 
-function addCards(cardLink, cardName) {
+function addCardElement(cardLink, cardName) {
   const itemElement = itemTemplate.cloneNode(true);
 
   itemElement.querySelector('.card__title').textContent = cardName;
@@ -112,7 +112,7 @@ function renderCards() {
   initialCards.forEach(function (element) {
     const cardLink = element.link;
     const cardName = element.name;
-    itemContainer.append(addCards(cardLink, cardName));
+    itemContainer.append(addCardElement(cardLink, cardName));
   });
 }
 
@@ -122,7 +122,7 @@ function addCardItem(evt) {
   evt.preventDefault();
   const cardName = imageName.value;
   const cardLink = imageLink.value;
-  itemContainer.prepend(addCards(cardLink, cardName));
+  itemContainer.prepend(addCardElement(cardLink, cardName));
   togglePopup(cardElement);
   cardName.value = '';
   cardLink.value = '';
@@ -152,7 +152,7 @@ closePopupByEsc();
 
 editProfileBtn.addEventListener('click', modalOpened);
 
-closeBtn.addEventListener('click', toggleClass);
+closeBtn.addEventListener('click', togglePopup);
 
 formProf.addEventListener('submit', saveForm);
 
