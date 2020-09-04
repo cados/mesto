@@ -7,12 +7,12 @@ const inputProf = document.querySelector('.popup__input_type_prof');
 const name = document.querySelector('.profile__title');
 const prof = document.querySelector('.profile__subtitle');
 const formProf = document.querySelector('.popup__form-prof');
-const addCardBtn = document.querySelector('.profile__add-button');
+const profileAddBtn = document.querySelector('.profile__add-button');
 const itemContainer = document.querySelector('.cards');
 const cardElement = document.querySelector('#popup_add-card');
 const closePlaceBtn = document.querySelector('#popup__close');
 //const imgContainer = document.querySelector('.card__images');
-const closeBtnImg = document.querySelector('.popup__close-button_img');
+const closeImgBtn = document.querySelector('.popup__close-button_img');
 const popupImage = document.querySelector('.popup__container_image');
 const popupImages = document.querySelector('.popup__images');
 //const popupAddImage = document.querySelector('.popup__form_image-add');
@@ -60,17 +60,13 @@ function togglePopup(target) {
   target.classList.toggle('popup_opened');
 }
 
-// function toggleClass() {
-//   popup.classList.toggle('popup_opened');
-// }
-
-function modalOpened() {
+function openProfileModal() {
   inputName.value = name.textContent;
   inputProf.value = prof.textContent;
   togglePopup(popup);
 }
 
-function saveForm(evt) {
+function saveProfileForm(evt) {
   evt.preventDefault();
   name.textContent = inputName.value;
   prof.textContent = inputProf.value;
@@ -150,22 +146,22 @@ function closePopupByEsc() {
 
 closePopupByEsc();
 
-editProfileBtn.addEventListener('click', modalOpened);
+editProfileBtn.addEventListener('click', openProfileModal);
 
 closeBtn.addEventListener('click', function () {
   togglePopup(popup);
 });
 
-formProf.addEventListener('submit', saveForm);
+formProf.addEventListener('submit', saveProfileForm);
 
 cardElement.addEventListener('submit', addCardItem);
-addCardBtn.addEventListener('click', function () {
+profileAddBtn.addEventListener('click', function () {
   togglePopup(cardElement);
 });
 closePlaceBtn.addEventListener('click', function () {
   togglePopup(cardElement);
 });
 
-closeBtnImg.addEventListener('click', function () {
+closeImgBtn.addEventListener('click', function () {
   togglePopup(popupImage);
 });
