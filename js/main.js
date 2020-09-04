@@ -20,6 +20,7 @@ const itemTemplate = document.querySelector('#itemTemplate').content;
 const popupText = document.querySelector('.popup__text');
 const imageName = document.querySelector('.popup__input_type_name-image');
 const imageLink = document.querySelector('.popup__input_type_prof-link');
+const escKeyCode = 'Escape';
 //const formImage = document.forms.image;
 
 const initialCards = [
@@ -139,7 +140,7 @@ closePopupByOverlay();
 
 function closePopupByEsc() {
   document.body.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === 27) {
+    if (evt.key === escKeyCode) {
       popupList.forEach((item) => {
         item.childNodes[1].classList.remove('popup_opened');
       });
@@ -151,7 +152,9 @@ closePopupByEsc();
 
 editProfileBtn.addEventListener('click', modalOpened);
 
-closeBtn.addEventListener('click', togglePopup);
+closeBtn.addEventListener('click', function () {
+  togglePopup(popup);
+});
 
 formProf.addEventListener('submit', saveForm);
 
