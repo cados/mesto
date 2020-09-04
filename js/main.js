@@ -83,6 +83,7 @@ function addCardElement(cardLink, cardName) {
 
   cardImage.addEventListener('click', function (evt) {
     popupImages.src = evt.target.src;
+    popupImages.alt = cardImage.alt;
     popupText.textContent = evt.target
       .closest('.card')
       .querySelector('.card__title').textContent;
