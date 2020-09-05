@@ -1,6 +1,6 @@
 const closeBtn = document.querySelector('.popup__close-button');
 const editProfileBtn = document.querySelector('.profile__edit-button');
-const popupContainer = document.querySelector('.popup__container');
+const profilePopup = document.querySelector('.popup__container');
 const popupList = Array.from(document.querySelectorAll('.popup'));
 const inputName = document.querySelector('.popup__input_type_name');
 const inputProf = document.querySelector('.popup__input_type_prof');
@@ -60,14 +60,14 @@ function togglePopup(target) {
 function openProfileModal() {
   inputName.value = name.textContent;
   inputProf.value = prof.textContent;
-  togglePopup(popupContainer);
+  togglePopup(profilePopup);
 }
 
 function saveProfileForm(evt) {
   evt.preventDefault();
   name.textContent = inputName.value;
   prof.textContent = inputProf.value;
-  togglePopup(popupContainer);
+  togglePopup(profilePopup);
 }
 
 function addCardElement(cardLink, cardName) {
@@ -146,7 +146,7 @@ closePopupByOverlay();
 editProfileBtn.addEventListener('click', openProfileModal);
 
 closeBtn.addEventListener('click', function () {
-  togglePopup(popupContainer);
+  togglePopup(profilePopup);
 });
 
 formProf.addEventListener('submit', saveProfileForm);
