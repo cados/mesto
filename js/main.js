@@ -136,21 +136,16 @@ function closePopUp(element) {
   document.removeEventListener('keydown', escKeyHandler);
 }
 
-function escKeyHandler(evt) {
-  if (evt.key === escKeyCode) {
-    if (mestoPopup.classList.contains(openPopUpSelector)) {
-      closePopUp(mestoPopup);
-    } else if (userPopup.classList.contains(openPopUpSelector)) {
-      closePopUp(userPopup);
-    } else if (imagePopup.classList.contains(openPopUpSelector)) {
-      closePopUp(imagePopup);
-    }
-  }
-}
-
 function eventHandler(evt) {
   if (evt.target.classList.contains(openPopUpSelector)) {
     closePopUp(evt.target);
+  }
+}
+
+function escKeyHandler(evt) {
+  if (evt.key === escKeyCode) {
+    const target = document.querySelector('.popup_opened');
+    closePopUp(target);
   }
 }
 
