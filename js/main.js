@@ -15,9 +15,6 @@ const itemTemplate = document.querySelector('#itemTemplate').content;
 const popupText = document.querySelector('.popup__text');
 const imageName = document.querySelector('.popup__input_type_name-image');
 const imageLink = document.querySelector('.popup__input_type_prof-link');
-const mestoPopup = document.querySelector('.popup__container_add');
-const userPopup = document.querySelector('.popup__container_prof');
-const imagePopup = document.querySelector('.popup__container_image');
 const openPopUpSelector = 'popup_opened';
 const escKeyCode = 'Escape';
 
