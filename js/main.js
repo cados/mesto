@@ -1,10 +1,10 @@
 const closeBtn = document.querySelectorAll('.popup__close-button');
 const editProfileBtn = document.querySelector('.profile__edit-button');
-const profilePopup = document.querySelector('.popup_prof');
+const profilePopup = document.querySelector('.popup__container_prof');
 const inputName = document.querySelector('.popup__input_type_name');
 const inputProf = document.querySelector('.popup__input_type_prof');
-const name = document.querySelector('.profile__title');
-const prof = document.querySelector('.profile__subtitle');
+const profileTitle = document.querySelector('.profile__title');
+const profileSubtitle = document.querySelector('.profile__subtitle');
 const formProf = document.querySelector('.popup__form-prof');
 const profileAddBtn = document.querySelector('.profile__add-button');
 const itemContainer = document.querySelector('.cards');
@@ -52,16 +52,16 @@ const initialCards = [
 ];
 
 function openProfileModal() {
-  inputName.value = name.textContent;
-  inputProf.value = prof.textContent;
-  openPopUp(profilePopup.childNodes[1]);
+  inputName.value = profileTitle.textContent;
+  inputProf.value = profileSubtitle.textContent;
+  openPopUp(profilePopup);
 }
 
 function saveProfileForm(evt) {
   evt.preventDefault();
-  name.textContent = inputName.value;
-  prof.textContent = inputProf.value;
-  closePopUp(profilePopup.childNodes[1]);
+  profileTitle.textContent = inputName.value;
+  profileSubtitle.textContent = inputProf.value;
+  closePopUp(profilePopup);
 }
 
 function addCardElement(cardLink, cardName) {
@@ -98,7 +98,7 @@ function addCardElement(cardLink, cardName) {
 function renderCards() {
   initialCards.forEach(function (element) {
     const cardLink = element.link;
-    const cardName = element.name;
+    const cardName = element.profileTitle;
     itemContainer.append(addCardElement(cardLink, cardName));
   });
 }
@@ -122,13 +122,13 @@ closeBtn.forEach((popUpCloseButton) => {
 });
 
 function openPopUp(element) {
-  element.classList.add('popup_opened');
+  element.classList.add(openPopUpSelector);
   element.addEventListener('click', eventHandler);
   document.addEventListener('keydown', escKeyHandler);
 }
 
 function closePopUp(element) {
-  element.classList.remove('popup_opened');
+  element.classList.remove(openPopUpSelector);
   element.removeEventListener('click', eventHandler);
   document.removeEventListener('keydown', escKeyHandler);
 }
