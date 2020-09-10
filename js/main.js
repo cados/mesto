@@ -15,8 +15,8 @@ const itemTemplate = document.querySelector('#itemTemplate').content;
 const popupText = document.querySelector('.popup__text');
 const imageName = document.querySelector('.popup__input_type_name-image');
 const imageLink = document.querySelector('.popup__input_type_prof-link');
-const openPopUpSelector = 'popup_opened';
 const escKeyCode = 'Escape';
+const openPopUpSelector = 'popup_opened';
 
 const initialCards = [
   {
