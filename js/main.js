@@ -98,7 +98,7 @@ function addCardElement(cardLink, cardName) {
 function renderCards() {
   initialCards.forEach(function (element) {
     const cardLink = element.link;
-    const cardName = element.profileTitle;
+    const cardName = element.name;
     itemContainer.append(addCardElement(cardLink, cardName));
   });
 }
