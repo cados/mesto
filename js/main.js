@@ -1,11 +1,11 @@
 const closeBtn = document.querySelectorAll('.popup__close-button');
 const editProfileBtn = document.querySelector('.profile__edit-button');
 const profilePopup = document.querySelector('.popup__container_prof');
-const inputName = document.querySelector('.popup__input_type_name');
-const inputProf = document.querySelector('.popup__input_type_prof');
+const profileInputName = document.querySelector('.popup__input_type_name');
+const profileInputProf = document.querySelector('.popup__input_type_prof');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
-const formProf = document.querySelector('.popup__form-prof');
+const profileForm = document.querySelector('.popup__form-prof');
 const profileAddBtn = document.querySelector('.profile__add-button');
 const itemContainer = document.querySelector('.cards');
 const cardElement = document.querySelector('#popup_add-card');
@@ -52,15 +52,15 @@ const initialCards = [
 ];
 
 function openProfileModal() {
-  inputName.value = profileTitle.textContent;
-  inputProf.value = profileSubtitle.textContent;
+  profileInputName.value = profileTitle.textContent;
+  profileInputProf.value = profileSubtitle.textContent;
   openPopUp(profilePopup);
 }
 
 function saveProfileForm(evt) {
   evt.preventDefault();
-  profileTitle.textContent = inputName.value;
-  profileSubtitle.textContent = inputProf.value;
+  profileTitle.textContent = profileInputName.value;
+  profileSubtitle.textContent = profileInputProf.value;
   closePopUp(profilePopup);
 }
 
@@ -148,7 +148,7 @@ function escKeyHandler(evt) {
 
 editProfileBtn.addEventListener('click', openProfileModal);
 
-formProf.addEventListener('submit', saveProfileForm);
+profileForm.addEventListener('submit', saveProfileForm);
 
 cardElement.addEventListener('submit', addCardItem);
 
