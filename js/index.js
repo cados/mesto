@@ -1,4 +1,5 @@
 import { Card } from './Card.js';
+import { FormValidator } from './FormValidator.js';
 
 const closeBtn = document.querySelectorAll('.popup__close-button');
 const editProfileBtn = document.querySelector('.profile__edit-button');
@@ -52,6 +53,15 @@ const initialCards = [
       'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
   },
 ];
+
+const validationSetting = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_active',
+};
 
 export { popupImage, popupImages, popupText, openPopUp };
 
@@ -121,6 +131,13 @@ function addCardItem(evt) {
   addCardToPage(element);
   closePopUp(cardElement);
 }
+
+function validation() {
+  const formValidator = new FormValidator(validationSetting, form);
+  formValidator.enableValidation();
+}
+
+validation();
 
 editProfileBtn.addEventListener('click', openProfileModal);
 
