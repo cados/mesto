@@ -14,10 +14,8 @@ const itemContainer = document.querySelector('.cards');
 const cardElement = document.querySelector('#popup_add-card');
 const popupImage = document.querySelector('.popup__container_image');
 const popupImages = document.querySelector('.popup__images');
-const itemTemplate = document.querySelector('#itemTemplate').content;
 const popupText = document.querySelector('.popup__text');
-const imageName = document.querySelector('.popup__input_type_name-image');
-const imageLink = document.querySelector('.popup__input_type_prof-link');
+const formList = Array.from(document.querySelectorAll('.popup__form'));
 const openPopUpSelector = 'popup_opened';
 const escKeyCode = 'Escape';
 
@@ -114,8 +112,9 @@ function escKeyHandler(evt) {
 }
 
 closeBtn.forEach((element) => {
-  element.addEventListener('click', function (evt) {
-    closePopUp(evt.target.parentElement.parentElement);
+  element.addEventListener('click', function () {
+    const target = document.querySelector('.popup_opened');
+    closePopUp(target);
   });
 });
 
@@ -133,7 +132,7 @@ function addCardItem(evt) {
 }
 
 function validation() {
-  const formValidator = new FormValidator(validationSetting, form);
+  const formValidator = new FormValidator(validationSetting, formList);
   formValidator.enableValidation();
 }
 
