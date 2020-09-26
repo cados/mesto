@@ -21,8 +21,9 @@ export class Card {
     openPopUp(popupImage);
   }
 
-  _removeCard(evt) {
-    evt.target.parentElement.remove();
+  _removeCard() {
+    const cardItem = document.querySelector('.card');
+    cardItem.remove();
   }
 
   _like(evt) {
