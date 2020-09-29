@@ -8,14 +8,14 @@ const profileInputName = document.querySelector('.popup__input_type_name');
 const profileInputProf = document.querySelector('.popup__input_type_prof');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
-const profileForm = document.querySelector('.popup__form-prof');
+const profileFormEdit = document.querySelector('.popup__form-prof');
+const profileFormAdd = document.querySelector('.popup__form_image-add');
 const profileAddBtn = document.querySelector('.profile__add-button');
 const itemContainer = document.querySelector('.cards');
 const cardElement = document.querySelector('#popup_add-card');
 const popupImage = document.querySelector('.popup__container_image');
 const popupImages = document.querySelector('.popup__images');
 const popupText = document.querySelector('.popup__text');
-const formList = Array.from(document.querySelectorAll('.popup__form'));
 const openPopUpSelector = 'popup_opened';
 const escKeyCode = 'Escape';
 
@@ -131,16 +131,15 @@ function addCardItem(evt) {
   closePopUp(cardElement);
 }
 
-function validation() {
-  const formValidator = new FormValidator(validationSetting, formList);
-  formValidator.enableValidation();
-}
+const validatorEditForm = new FormValidator(validationSetting, profileFormEdit);
+validatorEditForm.enableValidation();
 
-validation();
+const validatorAddForm = new FormValidator(validationSetting, profileFormAdd);
+validatorAddForm.enableValidation();
 
 editProfileBtn.addEventListener('click', openProfileModal);
 
-profileForm.addEventListener('submit', saveProfileForm);
+profileFormEdit.addEventListener('submit', saveProfileForm);
 
 cardElement.addEventListener('submit', addCardItem);
 
