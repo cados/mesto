@@ -18,9 +18,7 @@ export default class Card {
   }
 
   _removeCard() {
-    const target = document.querySelector('.card');
-    target.remove();
-    this.element = null;
+    this._element.remove();
   }
 
   _like(evt) {
@@ -40,7 +38,9 @@ export default class Card {
   _setEventListeners() {
     this._element
       .querySelector('.card__trash')
-      .addEventListener('click', this._removeCard);
+      .addEventListener('click', () => {
+        this._removeCard();
+      });
 
     this._element
       .querySelector('.card__like')
