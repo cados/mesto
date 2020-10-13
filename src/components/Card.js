@@ -1,29 +1,26 @@
-import { popupImage, popupImages, popupText, openPopUp } from './index.js';
-
-export class Card {
-  constructor(data, cardSelector) {
-    this._name = data.name;
-    this._link = data.link;
+export default class Card {
+  constructor(name, link, handleCardClick, cardSelector) {
+    this._name = name;
+    this._link = link;
+    this._handleCardClick = handleCardClick;
     this._cardSelector = cardSelector;
   }
 
   _getTemplate() {
-    const cardTemplate = document.querySelector(this._cardSelector).content;
+    const cardTemplate = document.querySelector(this._cardSelector).content
+      .children[0];
+
     const cardElement = cardTemplate.cloneNode(true);
     return cardElement;
   }
-  _showPic(evt) {
-    popupImages.src = evt.target.src;
-    popupImages.alt = evt.target.alt;
-    popupText.textContent = evt.target
-      .closest('.card')
-      .querySelector('.card__title').textContent;
-    openPopUp(popupImage);
+  _showImg() {
+    this._handleCardClick(this._name, this._link);
   }
 
   _removeCard() {
-    const cardItem = document.querySelector('.card');
-    cardItem.remove();
+    const target = document.querySelector('.card');
+    target.remove();
+    this.element = null;
   }
 
   _like(evt) {
@@ -51,6 +48,8 @@ export class Card {
 
     this._element
       .querySelector('.card__images')
-      .addEventListener('click', this._showPic);
+      .addEventListener('click', () => {
+        this._showImg();
+      });
   }
 }
