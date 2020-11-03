@@ -9,8 +9,10 @@ export const profileInputProf = document.querySelector(
 );
 export const profileTitle = document.querySelector('.profile__title');
 export const profileSubtitle = document.querySelector('.profile__subtitle');
+export const profileAvatar = document.querySelector('.profile__avatar');
 export const profileFormEdit = document.querySelector('.popup__form-prof');
 export const profileFormAdd = document.querySelector('.popup__form_image-add');
+export const profileAvatarEdit = document.querySelector('.popup__form_avatar');
 export const profileAddBtn = document.querySelector('.profile__add-button');
 export const itemContainer = document.querySelector('.cards');
 export const cardElement = document.querySelector('#popup_add-card');

@@ -12,6 +12,7 @@
   right: 15px;
   cursor: pointer;
   transition: opacity 0.5s;
+  display: none;
 }
 
 .card__trash:hover {
