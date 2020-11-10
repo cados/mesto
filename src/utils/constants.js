@@ -22,7 +22,7 @@ export const popupText = document.querySelector('.popup__text');
 export const openPopUpSelector = 'popup_opened';
 export const escKeyCode = 'Escape';
 
-export const initialCards = [
+const initialCards = [
   {
     name: 'Архыз',
     link:

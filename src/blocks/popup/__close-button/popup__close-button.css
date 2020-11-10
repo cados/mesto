@@ -12,6 +12,7 @@
   margin-right: -75px;
   align-self: flex-end;
   cursor: pointer;
+  transition: opacity 0.5s;
 }
 
 .popup__close-button:hover {

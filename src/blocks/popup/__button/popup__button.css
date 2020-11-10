@@ -13,8 +13,10 @@
   margin-top: 19px;
   cursor: pointer;
   border: none;
+  transition: opacity 0.5s;
 }
 
 .popup__button:hover {
-  background: rgba(0, 0, 0, 0.8);
+  /* background: rgba(0, 0, 0, 0.8); */
+  opacity: 0.8;
 }
