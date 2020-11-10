@@ -88,7 +88,7 @@ const formEditSubmitHandler = function (userData) {
       userInfo.setUserInfo(newUserData);
       popupEdit.close();
     })
-    .catch((error) => console.log(error))
+    .catch((error) => alert(error))
     .finally(() => {
       popupEdit.renderLoading(false);
     });
